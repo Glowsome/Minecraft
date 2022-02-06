@@ -1,6 +1,8 @@
 #!/bin/bash
 # Minecraft Backup Script v1.1.1 - adapted for use with tmux instead of screen
 
+# The script assumes tmux was launched with a named session called 'minecraft'
+
 # File and directory configuration
 # Ensure these directories have correct permissions
 # Do not add trailing slashes
