@@ -35,7 +35,7 @@ Change user to `minecraft`.
 su - minecraft
 ```
 
-As minecraft user download the server-jar from [Minecraft.net](https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar) When writing this the version was `1.18.1`.
+As minecraft user download the server-jar from [Minecraft.net](https://www.minecraft.net/en-us/download/server) When writing this the version was `1.18.1`.
 ```
 wget -O minecraft_server.1.18.1.jar https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar
 ```
