@@ -2,9 +2,13 @@
 A Minecraft resourse repository for running it on RockyLinux 8.x
 
 ## Installation ##
-
-To setup your Minecraft server start out with a fresh RockyLinux 8.x server/vps/LXC ( i use ProxMox LXC ),
-and assumes that your server has (atleast) 4Gb of memory available.
+<details>
+<summary>To setup your Minecraft server start out with a fresh RockyLinux 8.x server/vps/LXC ( i use ProxMox LXC ),
+and assumes that your server has:</summary>
+  
+    - (atleast) 4Gb of memory available.
+    - default minecraft port 25565 (TCP/UDP) open in firewall
+</details>
 
 Install required packages: (some packages like zstd are work in progress for changing backup to use them in the future)
 ```
