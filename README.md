@@ -3,7 +3,7 @@ A Minecraft server resource repository for running it on RockyLinux 8.x
 
 ## Installation ##
 <details>
-<summary>To setup your Minecraft server start out with a fresh RockyLinux 8.x server/vps/LXC ( i use a [ProxMox](https://www.proxmox.com/en/proxmox-ve) LXC ),
+<summary>To setup your Minecraft server start out with a fresh RockyLinux 8.x server/vps/LXC -  i use a [ProxMox](https://www.proxmox.com/en/proxmox-ve) LXC ),
 and will assumes that your server has:</summary>
   
     - (atleast) 4Gb of memory available.
