@@ -7,12 +7,13 @@ A Minecraft server resource repository for running it on RockyLinux 8.x
 and will assumes that your server has:</summary>
   
     - (atleast) 4Gb of memory available.
-    - default minecraft port 25565 (TCP/UDP) open in firewall
+    - Default minecraft port 25565 (TCP/UDP) open in firewall
+    - SSH acccess to the box.
 </details>
 
 Install required packages: (some packages like zstd are work in progress for changing backup to use them in the future)
 ```
-dnf install openssh-server wget tmux tar zstd java-17-openjdk-headless -y
+dnf install wget tmux tar zstd java-17-openjdk-headless -y
 ```
 
 Create folderstructure for Minecraft.
