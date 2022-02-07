@@ -1,5 +1,5 @@
 ## Description ##
-A Minecraft resourse repository for running it on RockyLinux 8.x
+A Minecraft server resourse repository for running it on RockyLinux 8.x
 
 ## Installation ##
 <details>
