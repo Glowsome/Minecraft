@@ -41,9 +41,14 @@ As minecraft user download the server-jar from [Minecraft.net](https://www.minec
 wget -O minecraft_server.1.18.1.jar https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar
 ```
 
+Create a symbolic link to the current version of the server-jar you downloaded (this will make it easy to just replace the symbolic link to a new/future version when updating)
+```
+ln -s minecraft_server.1.18.1.jar server.jar
+```
+
 Start the minecraft server to create `server.properties` and `eula.txt`, it will shutdown again afterwards (ignore errors/warnings on the output).
 ```
-java -Xmx1024M -Xms512M -jar minecraft_server.1.18.1.jar nogui
+java -Xmx1024M -Xms512M -jar server.jar nogui
 ```
 
 Overwrite the content of the previously created `eula.txt` so the content reads `eula=true`.
@@ -61,6 +66,7 @@ Install a crontab job to run the backup job each hour (the `-s` switch specifies
 ```
 echo "0 * * * * /opt/minecraft/backup.sh -s" | crontab -
 ```
+
 
 Switch back to user root by pressing `CRTL-D` 
 
@@ -83,7 +89,28 @@ Verify a successfull start of the server.
 ```
 systemctl status minecraft
 ```
+The output should look something like this:
+```
+● minecraft.service - Minecraft Server
+   Loaded: loaded (/etc/systemd/system/minecraft.service; enabled; vendor preset: disabled)
+  Drop-In: /run/systemd/system/minecraft.service.d
+           └─zzz-lxc-service.conf
+   Active: active (running) since Tue 2022-02-08 01:29:58 CET; 6s ago
+  Process: 304926 ExecStop=/bin/sleep 2 (code=exited, status=0/SUCCESS)
+  Process: 304925 ExecStop=/usr/bin/tmux send-keys -t minecraft:0.0 say SERVER SHUTTING DOWN. Saving map... C-m save-all C-m stop C-m (code
+=exited, status=0/SUCCESS)
+  Process: 304935 ExecStart=/usr/bin/tmux new -s minecraft -d /usr/bin/java -Xmx3096M -Xms2048M -XX:+UseG1GC -jar server.jar --nogui (code=
+exited, status=0/SUCCESS)
+ Main PID: 304937 (tmux: server)
+    Tasks: 25 (limit: 927876)
+   Memory: 330.1M
+   CGroup: /system.slice/minecraft.service
+           ├─304937 /usr/bin/tmux new -s minecraft -d /usr/bin/java -Xmx3096M -Xms2048M -XX:+UseG1GC -jar server.jar --nogui
+           └─304938 /usr/bin/java -Xmx3096M -Xms2048M -XX:+UseG1GC -jar server.jar --nogui
 
+Feb 08 01:29:58 minecraft.myservername.tld systemd[1]: Starting Minecraft Server...
+Feb 08 01:29:58 minecraft.myservername.tld systemd[1]: Started Minecraft Server.
+```
 When the start was corect enable the minecraft service.
 ```
 systemctl enable minecraft
