@@ -116,4 +116,44 @@ When the start was corect enable the minecraft service.
 systemctl enable minecraft
 ```
 
+## Updating ##
+<summary>
+To update the server to a newer version of minecraft perform the follwing procedure:
+</summary>
+
+Stop the minecraft server (when running / as root)
+```
+systemctl stop minecraft
+```
+
+Change to the minecraft user.
+```
+su minecraft
+```
+
+Download the new minecraft server file ( example , the exact link should be otained from mojang itself).
+```
+wget -O minecraft_server.1.19.jar https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar
+```
+
+Remove old symbolic link to the old version.
+```
+rm -f server.jar
+```
+
+Recreate symbolic link to the corect version of the server jarfile ( again the example is based on a specific version, so adapt where needed)
+```
+ln -s minecraft_server.1.19.jar server.jar
+```
+
+Exit minecraft user (assuming you logged in originally as root).
+```
+exit
+```
+
+Start minecraft Server.
+```
+systemctl start minecraft.service
+```
+
 Enjoy your Minecraft Server !
