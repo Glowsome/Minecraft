@@ -126,7 +126,7 @@ Stop the minecraft server (when running / as root)
 systemctl stop minecraft
 ```
 
-Change to the minecraft user.
+Change to the `minecraft` user.
 ```
 su minecraft
 ```
