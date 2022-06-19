@@ -7,7 +7,7 @@ User=minecraft
 Type=forking
 
 ExecStart=/usr/bin/tmux new -s minecraft -d "/usr/bin/java -Xmx3096M -Xms2048M -XX:+UseG1GC -jar server.jar --nogui"
-
+ExecReload=/usr/bin/tmux send-keys -t minecraft:0.0 'say SERVER RELOADING.' C-m 'reload' C-m
 ExecStop=/usr/bin/tmux send-keys -t minecraft:0.0 'say SERVER SHUTTING DOWN. Saving map...' C-m 'save-all' C-m 'stop' C-m
 ExecStop=/bin/sleep 2
 
