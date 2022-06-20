@@ -1,5 +1,16 @@
 #!/bin/bash
+
+##############################################
+# The original backup script was found on the internet, but i forgot where i originally got it from, and i no longer have the source,
+# nor was i able to retrace my steps.
+# If the original script looks familiar and you know where it came from please contact me so i can give credits to the original author.
+############################################### 
+
+# changelog v1.1.1
+# - adapted for use with tmux instead of screen
+
 # Minecraft Backup Script v1.1.1 - adapted for use with tmux instead of screen
+
 
 # The script assumes tmux was launched with a named session called 'minecraft'
 
