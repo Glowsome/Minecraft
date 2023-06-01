@@ -78,9 +78,9 @@ echo "0 * * * * /opt/minecraft/backup-zst.sh -s" | crontab -
 ```
 
 <details>
-<summary> The default backup-script settings are for a hourly/daily/weekly rotation, if you like to change this, then edit the script: </summary>
-- find the line in the script `# Increments of time on which to back up`
-- Adapt the parameters to your own needs for HOURLY,DAILY,WEEKLY,MONTHLY by setting true/false
+<summary>The default backup-script settings are for a hourly/daily/weekly rotation, if you like to change this, then edit the script:</summary>
+    - find the line in the script `# Increments of time on which to back up`.
+    - Adapt the parameters to your own needs for HOURLY,DAILY,WEEKLY,MONTHLY by setting true/false.
 </details>
 
 Switch back to user root by pressing `CRTL-D` 
