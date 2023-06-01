@@ -30,7 +30,7 @@ WEEKLYDIR=${BACKUPDIR}/weekly
 MONTHLYDIR=${BACKUPDIR}/monthly
 
 # Increments of time on which to back up
-HOURLY=false
+HOURLY=true
 DAILY=true
 WEEKLY=true
 MONTHLY=false
