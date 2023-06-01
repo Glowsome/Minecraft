@@ -56,17 +56,26 @@ Overwrite the content of the previously created `eula.txt` so the content reads 
 echo "eula=true" > eula.txt
 ```
 
-Place/create the also (in this repository) provided [backup script](https://raw.githubusercontent.com/Glowsome/Minecraft/main/backup.sh) and make it executable.
+Place/create either the (in this repository) provided tar [backup script](https://raw.githubusercontent.com/Glowsome/Minecraft/main/backup.sh) or the zst with better compression [backup script](https://raw.githubusercontent.com/Glowsome/Minecraft/main/backup-zst.sh) and make it executable.
+
 ```
 wget https://raw.githubusercontent.com/Glowsome/Minecraft/main/backup.sh
 chmod +x backup.sh
+```
+OR
+```
+wget https://raw.githubusercontent.com/Glowsome/Minecraft/main/backup-zst.sh
+chmod +x backup-zst.sh
 ```
 
 Install a crontab job to run the backup job each hour (the `-s` switch specifies to the script to run on a schedule)
 ```
 echo "0 * * * * /opt/minecraft/backup.sh -s" | crontab -
 ```
-
+OR
+```
+echo "0 * * * * /opt/minecraft/backup-zst.sh -s" | crontab -
+```
 
 Switch back to user root by pressing `CRTL-D` 
 
